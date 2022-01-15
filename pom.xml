@@ -20,6 +20,7 @@
         <HikariCP.version>3.4.5</HikariCP.version>
         <!-- test dependencies-->
         <junit.version>4.12</junit.version>
+        <kafka.version>1.0.2</kafka.version>
     </properties>
 
     <dependencies>
@@ -72,6 +73,12 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
             <version>${jackson.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>${kafka.version}</version>
             <optional>true</optional>
         </dependency>
     </dependencies>
