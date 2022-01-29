@@ -18,7 +18,7 @@ public class KafkaConsumerSample {
         // 配置信息
         Map<String, Object> configs = new HashMap<>();
         // 配置连接信息
-        configs.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+        configs.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.7.77:9092");
         // 配置key的反序列化器
         configs.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, IntegerDeserializer.class);
         // 配置value的反序列化器
@@ -30,7 +30,7 @@ public class KafkaConsumerSample {
 
         KafkaConsumer<Integer, String> consumer = new KafkaConsumer<Integer, String>(configs);
 
-        consumer.subscribe(Arrays.asList("topic_1"));
+        consumer.subscribe(Arrays.asList("tp_demo_01"));
 //        consumer.subscribe(Pattern.compile("topic_1"));
 
         int count = 0;
