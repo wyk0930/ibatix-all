@@ -1,4 +1,4 @@
-package com.ibatix.sample;
+package com.ibatix.web;
 
 public class User {
     private Integer userId;

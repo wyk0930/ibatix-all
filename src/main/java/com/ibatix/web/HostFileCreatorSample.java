@@ -1,4 +1,4 @@
-package com.ibatix.sample;
+package com.ibatix.web;
 
 import java.io.FileWriter;
 import java.text.MessageFormat;
