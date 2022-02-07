@@ -7,7 +7,7 @@ import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
-public class UserSerializer implements Serializer<User> {
+public class UserSerializer implements Serializer<UserModel> {
     @Override
     public void configure(Map<String, ?> map, boolean b) {
         // do nothing.
@@ -15,7 +15,7 @@ public class UserSerializer implements Serializer<User> {
     }
 
     @Override
-    public byte[] serialize(String s, User user) {
+    public byte[] serialize(String s, UserModel user) {
         if (user == null) return null;
 
         Integer userId = user.getUserId();

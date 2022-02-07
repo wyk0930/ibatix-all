@@ -66,5 +66,4 @@ public class BaseException extends RuntimeException {
     public BaseException(VendorCode vendorCode, Throwable cause, String... args) {
         super(MessageUtils.format(vendorCode.getTemplate(), args), cause);
     }
-
 }

@@ -1,6 +1,6 @@
 package com.ibatix.web;
 
-public class User {
+public class UserModel {
     private Integer userId;
     private String username;
 

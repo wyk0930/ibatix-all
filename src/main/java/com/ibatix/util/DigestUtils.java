@@ -138,7 +138,7 @@ public final class DigestUtils {
         try {
             instance = MessageDigest.getInstance(algorithm.getValue());
         } catch (NoSuchAlgorithmException e) {
-            throw new BaseException(VendorCode.ZC_00003, e, algorithm.name());
+            throw new BaseException(VendorCode.ERR_00000, e, algorithm.name());
         }
         return instance;
     }
