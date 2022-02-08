@@ -15,6 +15,26 @@ public final class NullUtils {
     }
 
     /**
+     * 指定对象不为空
+     *
+     * @param arg 对象
+     * @return 判断结果
+     */
+    public static boolean isNotNullOrEmpty(Object... arg) {
+        return !isNullOrEmpty(arg);
+    }
+
+    /**
+     * 指定对象为空
+     *
+     * @param arg 对象
+     * @return 判断结果
+     */
+    public static boolean isNullOrEmpty(Object... arg) {
+        return isNull(arg) || arg.length == 0;
+    }
+
+    /**
      * 判断指定对象是否为空
      * <ol>
      * <li>true表示对象为空</li>
