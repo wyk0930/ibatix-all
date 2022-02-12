@@ -28,7 +28,7 @@ public final class MessageUtils {
      */
     public static String format(String pattern, String... args) {
         if (StringUtils.isNullOrBlank(pattern)) {
-            throw new BaseException(VendorCode.EER_00001);
+            throw new BaseException(VendorCode.EER_0001);
         }
         return MessageFormat.format(pattern, args);
     }
