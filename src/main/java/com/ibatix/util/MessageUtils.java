@@ -1,6 +1,6 @@
 package com.ibatix.util;
 
-import com.ibatix.core.VendorCode;
+import com.ibatix.core.support.VendorCode;
 import com.ibatix.core.exception.BaseException;
 
 import java.text.MessageFormat;

@@ -1,6 +1,6 @@
-package com.ibatix.core;
+package com.ibatix.core.support;
 
-import com.ibatix.core.support.BaseEnum;
+import com.ibatix.core.BaseEnum;
 
 /**
  * 文件状态

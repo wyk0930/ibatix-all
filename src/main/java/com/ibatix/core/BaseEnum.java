@@ -1,4 +1,4 @@
-package com.ibatix.core.support;
+package com.ibatix.core;
 
 /**
  * 用于业务状态持久化。

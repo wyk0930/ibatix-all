@@ -1,6 +1,6 @@
 package com.ibatix.util;
 
-import com.ibatix.core.support.BaseEnum;
+import com.ibatix.core.BaseEnum;
 
 /**
  * 枚举工具类

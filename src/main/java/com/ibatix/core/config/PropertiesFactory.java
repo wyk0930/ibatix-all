@@ -1,6 +1,6 @@
 package com.ibatix.core.config;
 
-import com.ibatix.core.Const;
+import com.ibatix.core.support.Const;
 import com.ibatix.util.NullUtils;
 
 import java.io.FileInputStream;

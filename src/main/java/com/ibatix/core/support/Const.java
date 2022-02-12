@@ -1,4 +1,4 @@
-package com.ibatix.core;
+package com.ibatix.core.support;
 
 public final class Const {
     public static final String DEFAULT_CHARSET_STR = "UTF-8";

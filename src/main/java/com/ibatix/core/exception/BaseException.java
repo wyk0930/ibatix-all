@@ -1,7 +1,7 @@
 package com.ibatix.core.exception;
 
 
-import com.ibatix.core.VendorCode;
+import com.ibatix.core.support.VendorCode;
 import com.ibatix.util.MessageUtils;
 
 /**

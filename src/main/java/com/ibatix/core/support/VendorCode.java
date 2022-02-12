@@ -1,4 +1,4 @@
-package com.ibatix.core;
+package com.ibatix.core.support;
 
 /**
  * 自定义厂商代码
