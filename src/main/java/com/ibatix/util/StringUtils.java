@@ -69,4 +69,18 @@ public final class StringUtils {
     public static boolean isNull(String arg) {
         return NullUtils.isNull(arg);
     }
+
+    /**
+     * 判断指定字符串为空白
+     * <ol>
+     * <li>true表示对象为空白</li>
+     * <li>false表示对象不为空白</li>
+     * </ol>
+     *
+     * @param arg 字符串
+     * @return 判断结果
+     */
+    public static boolean isBlank(String arg) {
+        return arg.trim().length() == 0;
+    }
 }
