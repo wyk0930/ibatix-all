@@ -29,7 +29,7 @@ public final class DigestUtils {
      * @return MD5码
      */
     public static String md5sum(File file) {
-        return digest(file, DigestAlgorithm.MD5);
+        return digest(file, DigestAlgorithm.SHA256);
     }
 
     /**
@@ -39,7 +39,7 @@ public final class DigestUtils {
      * @return MD5码
      */
     public static String md5sum(InputStream in) {
-        return digest(in, DigestAlgorithm.MD5);
+        return digest(in, DigestAlgorithm.SHA256);
     }
 
     /**
