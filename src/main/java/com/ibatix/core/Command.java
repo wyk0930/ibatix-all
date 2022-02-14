@@ -5,10 +5,12 @@ package com.ibatix.core;
  *
  * @author master
  */
-public interface Command<A, R> {
+public interface Command<T> {
 
     /**
      * 命令执行实现
      */
-    R execute(A... arg);
+    State execute(T arg);
+
+    CommandExecutor getExecutor();
 }
