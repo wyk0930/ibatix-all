@@ -1,4 +1,11 @@
 package com.ibatix.core;
 
-public interface Payload {
+import java.io.Serializable;
+
+/**
+ * 参数数据主体内容
+ *
+ * @author master
+ */
+public interface Payload extends Serializable {
 }
