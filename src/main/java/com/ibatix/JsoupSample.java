@@ -17,29 +17,30 @@ import java.io.IOException;
 import java.net.URL;
 
 public class JsoupSample {
-    private final static String TARGET = "http://www.gov.cn/zhengce/content/2022-02/17/content_5674176.htm";
-    //    private final static String TARGET = "http://sousuo.gov.cn/column/30469/0.htm";
+//    private final static String TARGET = "http://www.gov.cn/zhengce/content/2022-02/17/content_5674176.htm";
+        private final static String TARGET = "http://sousuo.gov.cn/column/30469/0.htm";
     private final static String CHARSET = "UTF-8";
 
     public static void main(String[] args) throws Exception {
         Document document = Jsoup.parse(new URL(TARGET).openStream(), CHARSET, TARGET);   //利用Jsoup类的静态方法，将html转换成一个Document对象
-//        Elements elements = document.select("ul.listTxt a[href]"); //利用select选择器，取得需要的li元素集合
+        Elements elements = document.select("ul.listTxt a[href]"); //利用select选择器，取得需要的li元素集合
 //        Elements elements = document.select("div.wrap table tbody tr td tbody tr"); //利用select选择器，取得需要的li元素集合
 
-//        for (Element ele : elements) {
-//            System.out.println(elements.get(0).text());
-//                System.out.println(ele.getElementsByTag("a").attr("href"));
-//            Elements htmlTag = ele.getElementsByTag("a");
-//            String targetLink = htmlTag.attr("href");
-//            String targetName = htmlTag.text();
-//            System.out.println(targetName + ":" + targetLink);
-//        }
-        Elements elements = document.select("div.wrap table tbody");
-        int size = elements.size();
-        System.out.println(size);
-        for (Element element : elements) {
-            System.out.println(element);
+        for (Element ele : elements) {
+            System.out.println(elements.get(0).text());
+                System.out.println(ele.getElementsByTag("a").attr("href"));
+            Elements htmlTag = ele.getElementsByTag("a");
+            String targetLink = htmlTag.attr("href");
+            String targetName = htmlTag.text();
+            System.out.println(targetName + ":" + targetLink);
         }
+
+//        Elements elements = document.select("div.wrap table tbody");
+//        int size = elements.size();
+//        System.out.println(size);
+//        for (Element element : elements) {
+//            System.out.println(element);
+//        }
     }
 
     /**
