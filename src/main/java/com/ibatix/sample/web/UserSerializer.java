@@ -1,4 +1,4 @@
-package com.ibatix.web;
+package com.ibatix.sample.web;
 
 import org.apache.kafka.common.errors.SerializationException;
 import org.apache.kafka.common.serialization.Serializer;

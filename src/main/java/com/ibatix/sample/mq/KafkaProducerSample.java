@@ -1,4 +1,4 @@
-package com.ibatix.mq;
+package com.ibatix.sample.mq;
 
 import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.header.Header;

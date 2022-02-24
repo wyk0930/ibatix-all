@@ -1,4 +1,4 @@
-package com.ibatix.web;
+package com.ibatix.sample.web;
 
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerInterceptor;

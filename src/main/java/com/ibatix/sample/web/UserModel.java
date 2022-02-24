@@ -1,4 +1,4 @@
-package com.ibatix.web;
+package com.ibatix.sample.web;
 
 public class UserModel {
     private Integer userId;

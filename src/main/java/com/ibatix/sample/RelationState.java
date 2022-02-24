@@ -1,4 +1,4 @@
-package com.ibatix;
+package com.ibatix.sample;
 
 import com.ibatix.core.BaseEnum;
 

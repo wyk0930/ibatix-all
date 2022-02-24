@@ -1,4 +1,4 @@
-package com.ibatix.mq;
+package com.ibatix.sample.mq;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.KafkaConsumer;

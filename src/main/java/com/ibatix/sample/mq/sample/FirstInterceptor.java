@@ -1,4 +1,4 @@
-package com.ibatix.mq.sample;
+package com.ibatix.sample.mq.sample;
 
 import org.apache.kafka.clients.consumer.ConsumerInterceptor;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
@@ -7,19 +7,19 @@ import org.apache.kafka.common.TopicPartition;
 
 import java.util.Map;
 
-public class SecondInterceptor implements ConsumerInterceptor<String, String> {
+public class FirstInterceptor implements ConsumerInterceptor<String, String> {
     @Override
     public ConsumerRecords<String, String> onConsume(ConsumerRecords<String, String>
                                                              records) {
 // poll⽅法返回结果之前最后要调⽤的⽅法
-        System.out.println("Two -- 开始");
+        System.out.println("One -- 开始");
 // 消息不做处理，直接返回
         return records;
     }
     @Override
     public void onCommit(Map<TopicPartition, OffsetAndMetadata> offsets) {
 // 消费者提交偏移量的时候，经过该⽅法
-        System.out.println("Two -- 结束");
+        System.out.println("One -- 结束");
     }
     @Override
     public void close() {

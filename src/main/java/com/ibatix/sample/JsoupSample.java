@@ -1,4 +1,4 @@
-package com.ibatix;
+package com.ibatix.sample;
 
 import com.ibatix.util.NullUtils;
 import org.apache.http.HttpEntity;
