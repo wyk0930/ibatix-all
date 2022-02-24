@@ -1,7 +1,7 @@
 package com.ibatix.core.data.jdbc.support;
 
 import com.ibatix.core.data.jdbc.DefaultSqlCommandExecutor;
-import com.ibatix.core.data.jdbc.QueryRequest;
+import com.ibatix.core.data.jdbc.QueryCommand;
 import com.ibatix.core.data.jdbc.SqlConfiguration;
 import com.ibatix.core.data.jdbc.SqlConnection;
 
@@ -16,17 +16,17 @@ public class DefaultSqlConnection implements SqlConnection {
     }
 
     @Override
-    public <S, T> List<T> selectList(QueryRequest<S, T> queryRequest, Object... params) throws Exception {
+    public <S, T> List<T> selectList(QueryCommand<S, T> queryCommand, Object... params) throws Exception {
 
         //将要去完成对simpleExecutor里的query方法的调用
         DefaultSqlCommandExecutor simpleExecutor = new DefaultSqlCommandExecutor();
-        List<T> list = simpleExecutor.doQuery(this, queryRequest, params);
+        List<T> list = simpleExecutor.doQuery(this, queryCommand);
 
         return list;
     }
 
     @Override
-    public <S, T> T selectOne(QueryRequest<S, T> queryRequest, Object... params) throws Exception {
+    public <S, T> T selectOne(QueryCommand<S, T> queryCommand, Object... params) throws Exception {
         List<T> objects = null; //selectList(statementid, params);
         if (objects.size() == 1) {
             return objects.get(0);

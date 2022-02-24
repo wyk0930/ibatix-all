@@ -10,10 +10,10 @@ import java.util.List;
  */
 public interface SqlConnection {
     //查询所有
-    <S, T> List<T> selectList(QueryRequest<S, T> queryRequest, Object... params) throws Exception;
+    <S, T> List<T> selectList(QueryCommand<S, T> queryCommand, Object... params) throws Exception;
 
     //根据条件查询单个
-    <S, T> T selectOne(QueryRequest<S, T> queryRequest, Object... params) throws Exception;
+    <S, T> T selectOne(QueryCommand<S, T> queryCommand, Object... params) throws Exception;
 
     //为Dao接口生成代理实现类
 //    <T> T getMapper(Class<?> mapperClass);

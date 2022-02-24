@@ -16,13 +16,13 @@ import java.sql.ResultSetMetaData;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DefaultSqlCommandExecutor implements SqlExecutor {
+public class DefaultSqlCommandExecutor implements SqlCommandExecutor {
 
 
     @Override
-    public <S, T> List<T> doQuery(SqlConnection sqlConnection, QueryRequest<S, T> queryRequest, Object... params) throws Exception {
+    public <S, T> List<T> doQuery(SqlConnection sqlConnection, QueryCommand<S, T> queryCommand) throws Exception {
         // 解析SQL语句
-        String sql = queryRequest.getSql();
+        String sql = queryCommand.getSql();
         BoundSql boundSql = getBoundSql(sql);
         Connection connection = sqlConnection.getConnection();
         // 3.获取预处理对象：preparedStatement
@@ -30,7 +30,7 @@ public class DefaultSqlCommandExecutor implements SqlExecutor {
 
         // 4. 设置参数
         //获取到了参数的全路径
-        Class<S> parameterType = queryRequest.getParameterType();
+        Class<S> parameterType = queryCommand.getParameterType();
 
         List<ParameterMapping> parameterMappingList = boundSql.getParameterMappingList();
         for (int i = 0; i < parameterMappingList.size(); i++) {
@@ -41,7 +41,7 @@ public class DefaultSqlCommandExecutor implements SqlExecutor {
             Field declaredField = parameterType.getDeclaredField(content);
             //暴力访问
             declaredField.setAccessible(true);
-            Object o = declaredField.get(params[0]);
+            Object o = declaredField.get(queryCommand.getArguments()[0]);
 
             preparedStatement.setObject(i + 1, o);
 
@@ -50,7 +50,7 @@ public class DefaultSqlCommandExecutor implements SqlExecutor {
 
         // 5. 执行sql
         ResultSet resultSet = preparedStatement.executeQuery();
-        Class<T> resultType = queryRequest.getResultType();
+        Class<T> resultType = queryCommand.getResultType();
 
         ArrayList<Object> objects = new ArrayList<>();
 

@@ -1,6 +1,6 @@
 package com.ibatix.core;
 
-public abstract class AbstractCommand<T extends Payload> implements Command<T> {
+public abstract class AbstractCommand<T extends Payload> implements Command {
 
     private CommandExecutor executor;
 
@@ -9,12 +9,12 @@ public abstract class AbstractCommand<T extends Payload> implements Command<T> {
     }
 
     @Override
-    public State execute(T arg) {
+    public State execute() {
         State state = null;
         T runtimeArgs = null;
 
         try {
-            runtimeArgs = before(arg);
+            runtimeArgs = before(null);
             state = exec(runtimeArgs);
 
             after(state);
@@ -27,12 +27,6 @@ public abstract class AbstractCommand<T extends Payload> implements Command<T> {
     }
 
     protected abstract State exec(T arg);
-
-    @Override
-    public CommandExecutor getExecutor() {
-        return null;
-    }
-
 
     protected <T> T before(T arg) {
         return arg;
