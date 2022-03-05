@@ -20,6 +20,7 @@
         <HikariCP.version>3.4.5</HikariCP.version>
         <httpclient.version>4.5.3</httpclient.version>
         <jsoup.version>1.10.3</jsoup.version>
+        <mongo.version>3.12.10</mongo.version>
         <!-- test dependencies-->
         <junit.version>4.12</junit.version>
         <kafka.version>1.0.2</kafka.version>
@@ -96,6 +97,11 @@
             <artifactId>kafka-clients</artifactId>
             <version>${kafka.version}</version>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>${mongo.version}</version>
         </dependency>
     </dependencies>
 </project>
