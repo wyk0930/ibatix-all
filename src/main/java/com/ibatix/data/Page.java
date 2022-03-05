@@ -1,4 +1,4 @@
-package com.ibatix.core.data;
+package com.ibatix.data;
 
 
 import java.io.Serializable;

@@ -1,4 +1,4 @@
-package com.ibatix.core.data.jdbc;
+package com.ibatix.data.jdbc;
 
 import java.sql.Connection;
 import java.util.List;

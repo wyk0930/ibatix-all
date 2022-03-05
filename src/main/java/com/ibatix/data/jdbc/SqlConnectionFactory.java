@@ -1,4 +1,4 @@
-package com.ibatix.core.data.jdbc;
+package com.ibatix.data.jdbc;
 
 /**
  * 关系型数据库连接生产工厂

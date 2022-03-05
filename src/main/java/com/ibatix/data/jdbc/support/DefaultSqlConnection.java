@@ -1,9 +1,9 @@
-package com.ibatix.core.data.jdbc.support;
+package com.ibatix.data.jdbc.support;
 
-import com.ibatix.core.data.jdbc.DefaultSqlCommandExecutor;
-import com.ibatix.core.data.jdbc.QueryCommand;
-import com.ibatix.core.data.jdbc.SqlConfiguration;
-import com.ibatix.core.data.jdbc.SqlConnection;
+import com.ibatix.data.jdbc.DefaultSqlCommandExecutor;
+import com.ibatix.data.jdbc.QueryCommand;
+import com.ibatix.data.jdbc.SqlConfiguration;
+import com.ibatix.data.jdbc.SqlConnection;
 
 import java.sql.Connection;
 import java.util.List;

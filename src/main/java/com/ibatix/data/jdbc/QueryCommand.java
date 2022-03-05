@@ -1,8 +1,8 @@
-package com.ibatix.core.data.jdbc;
+package com.ibatix.data.jdbc;
 
 import com.ibatix.core.State;
 import com.ibatix.core.context.ContextHolder;
-import com.ibatix.core.data.jdbc.support.AbstractSqlCommand;
+import com.ibatix.data.jdbc.support.AbstractSqlCommand;
 
 public class QueryCommand<S, T> extends AbstractSqlCommand {
     private String sql;

@@ -1,10 +1,10 @@
-package com.ibatix.core.data.jdbc;
+package com.ibatix.data.jdbc;
 
 
-import com.ibatix.core.data.jdbc.support.BoundSql;
-import com.ibatix.core.data.jdbc.support.GenericTokenParser;
-import com.ibatix.core.data.jdbc.support.ParameterMapping;
-import com.ibatix.core.data.jdbc.support.ParameterMappingTokenHandler;
+import com.ibatix.data.jdbc.support.BoundSql;
+import com.ibatix.data.jdbc.support.GenericTokenParser;
+import com.ibatix.data.jdbc.support.ParameterMapping;
+import com.ibatix.data.jdbc.support.ParameterMappingTokenHandler;
 
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Field;

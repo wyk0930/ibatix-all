@@ -1,4 +1,4 @@
-package com.ibatix.core.data.jdbc.support;
+package com.ibatix.data.jdbc.support;
 
 public class ParameterMapping {
 
