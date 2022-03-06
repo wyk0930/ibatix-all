@@ -14,16 +14,18 @@
         <!-- required dependencies-->
         <cglib.version>3.3.0</cglib.version>
         <objenesis.version>3.2</objenesis.version>
-        <!-- optional dependencies-->
+        <!-- datasource dependencies -->
+        <mongo.version>3.12.10</mongo.version>
+        <neo4j.version>3.5.5</neo4j.version>
+        <!-- test dependencies-->
+        <junit.version>4.12</junit.version>
+        <kafka.version>1.0.2</kafka.version>
+        <!-- other dependencies-->
         <jackson.version>2.13.0</jackson.version>
         <mysql.version>8.0.27</mysql.version>
         <HikariCP.version>3.4.5</HikariCP.version>
         <httpclient.version>4.5.3</httpclient.version>
         <jsoup.version>1.10.3</jsoup.version>
-        <mongo.version>3.12.10</mongo.version>
-        <!-- test dependencies-->
-        <junit.version>4.12</junit.version>
-        <kafka.version>1.0.2</kafka.version>
     </properties>
 
     <dependencies>
@@ -31,8 +33,8 @@
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>${httpclient.version}</version>
+            <optional>true</optional>
         </dependency>
-
         <dependency>
             <!-- jsoup HTML parser library @ https://jsoup.org/ -->
             <groupId>org.jsoup</groupId>
@@ -52,6 +54,7 @@
             <groupId>org.objenesis</groupId>
             <artifactId>objenesis</artifactId>
             <version>${objenesis.version}</version>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
@@ -102,6 +105,13 @@
             <groupId>org.mongodb</groupId>
             <artifactId>mongo-java-driver</artifactId>
             <version>${mongo.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.neo4j</groupId>
+            <artifactId>neo4j</artifactId>
+            <version>${neo4j.version}</version>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 </project>
