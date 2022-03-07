@@ -3,17 +3,16 @@ package com.ibatix.core.support;
 import com.ibatix.core.BaseEnum;
 
 /**
- * 文件状态
+ * 通用状态
  *
  * @author master
  */
-public enum Status implements BaseEnum {
-    INVALID(-1, "无效"),
-    INACTIVE(0, "非活动"),
+public enum GenericState implements BaseEnum {
     ACTIVE(1, "活动"),
-    HISTORIC(2, "历史版本");
+    INACTIVE(0, "非活动"),
+    INVALID(-1, "无效");
 
-    Status(Integer code, String desc) {
+    GenericState(Integer code, String desc) {
         this.code = code;
         this.desc = desc;
     }
