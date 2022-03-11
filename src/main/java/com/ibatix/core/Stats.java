@@ -9,62 +9,62 @@ import java.util.Map;
  *
  * @author master
  */
-public interface State {
+public interface Stats {
 
     boolean getBoolean();
 
-    State withBoolean(boolean arg);
+    Stats withBoolean(boolean arg);
 
     char getChar();
 
-    State withChar(char arg);
+    Stats withChar(char arg);
 
     byte getByte();
 
-    State withByte(byte arg);
+    Stats withByte(byte arg);
 
     short getShort();
 
-    State withShort(short arg);
+    Stats withShort(short arg);
 
     int getInt();
 
-    State withInt(int arg);
+    Stats withInt(int arg);
 
     long getLong();
 
-    State withLong(long arg);
+    Stats withLong(long arg);
 
     float getFloat();
 
-    State withFloat(float arg);
+    Stats withFloat(float arg);
 
     double getDouble();
 
-    State withDouble(double arg);
+    Stats withDouble(double arg);
 
     BigDecimal getBigDecimal();
 
-    State withBigDecimal(BigDecimal arg);
+    Stats withBigDecimal(BigDecimal arg);
 
     String getString();
 
-    State withString(String arg);
+    Stats withString(String arg);
 
     byte[] getBytes();
 
-    State withBytes(byte[] arg);
+    Stats withBytes(byte[] arg);
 
     List<Object> getList();
 
-    State withList(List<Object> arg);
+    Stats withList(List<Object> arg);
 
     Map<?, ?> getMap();
 
-    State withMap(Map<?, ?> arg);
+    Stats withMap(Map<?, ?> arg);
 
     Object getObject();
 
-    State withObject(Object arg);
+    Stats withObject(Object arg);
 
 }

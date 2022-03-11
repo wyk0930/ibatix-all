@@ -9,38 +9,38 @@ public abstract class AbstractCommand<T extends Payload> implements Command {
     }
 
     @Override
-    public State execute() {
-        State state = null;
+    public Stats execute() {
+        Stats stats = null;
         T runtimeArgs = null;
 
         try {
             runtimeArgs = before(null);
-            state = exec(runtimeArgs);
+            stats = exec(runtimeArgs);
 
-            after(state);
+            after(stats);
         } catch (Exception e) {
-            afterThrowing(runtimeArgs, state, e);
+            afterThrowing(runtimeArgs, stats, e);
         } finally {
-            afterReturning(state);
+            afterReturning(stats);
         }
-        return state;
+        return stats;
     }
 
-    protected abstract State exec(T arg);
+    protected abstract Stats exec(T arg);
 
     protected <T> T before(T arg) {
         return arg;
     }
 
-    protected void after(State state) {
+    protected void after(Stats stats) {
 
     }
 
-    protected <T> void afterThrowing(T arg, State state, Exception e) {
+    protected <T> void afterThrowing(T arg, Stats stats, Exception e) {
 
     }
 
-    protected void afterReturning(State state) {
+    protected void afterReturning(Stats stats) {
 
     }
 }

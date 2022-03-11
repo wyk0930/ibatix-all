@@ -1,49 +1,38 @@
 package com.ibatix.core.context;
 
-import com.ibatix.util.NullUtils;
+import com.ibatix.core.data.AbstractDataServiceContext;
+import com.ibatix.core.data.DataServiceContext;
 
-import java.util.HashMap;
-import java.util.Map;
-
+/**
+ * 上下文工具类
+ *
+ * @author master
+ */
 public final class ContextHolder {
-    private static ContextHolder _instance;
-    private Map<String, Object> cache;
+    private static final DataServiceContext context;
+
+    static {
+        context = new AbstractDataServiceContext() {
+        };
+    }
 
     private ContextHolder() {
-        cache = new HashMap<>();
+
     }
 
-    public static ContextHolder getInstance() {
-        if (NullUtils.isNull(_instance)) {
-            synchronized (ContextHolder.class) {
-                if (NullUtils.isNull(_instance)) {
-                    _instance = new ContextHolder();
-                }
-            }
-        }
-        return _instance;
+    public static DataServiceContext getContext() {
+        return context;
     }
 
-    /**
-     * 根据指定名称及类型获取对象
-     *
-     * @param name 对象名称
-     * @param type 对象类型
-     * @param <T>  运行时类型
-     * @return 对象
-     */
+    public static void put(String name, Object value) {
+        context.put(name, value);
+    }
+
     public static <T> T get(String name, Class<T> type) {
-        Object target = get(name);
-        return type.cast(target);
+        return context.get(name, type);
     }
 
-    /**
-     * 获取指定名称的对象
-     *
-     * @param name 对象名称
-     * @return 对象
-     */
-    public static Object get(String name) {
-        return getInstance().cache.get(name);
+    public static <T> T get(Class<T> type) {
+        return context.get(type);
     }
 }

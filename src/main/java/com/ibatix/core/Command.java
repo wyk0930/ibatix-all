@@ -10,5 +10,5 @@ public interface Command {
     /**
      * 命令执行实现
      */
-    State execute();
+    Stats execute();
 }

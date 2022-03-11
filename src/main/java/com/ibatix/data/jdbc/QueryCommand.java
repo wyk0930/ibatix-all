@@ -1,6 +1,6 @@
 package com.ibatix.data.jdbc;
 
-import com.ibatix.core.State;
+import com.ibatix.core.Stats;
 import com.ibatix.core.context.ContextHolder;
 import com.ibatix.data.jdbc.support.AbstractSqlCommand;
 
@@ -47,14 +47,14 @@ public class QueryCommand<S, T> extends AbstractSqlCommand {
     }
 
     @Override
-    public State execute() {
-        State state = null;
+    public Stats execute() {
+        Stats stats = null;
         try {
-            state = (State) getExecutor().doQuery(null, null);
+            stats = (Stats) getExecutor().doQuery(null, null);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return state;
+        return stats;
     }
 
 }
