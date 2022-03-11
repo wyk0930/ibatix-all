@@ -6,6 +6,7 @@ public abstract class AbstractDataServiceExecutorFactory<T extends DataServiceEx
         implements DataServiceExecutorFactory<T> {
 
     private ThreadLocal<T> localExecutor;
+    private String name;
     private DataServiceConfiguration config;
 
     protected AbstractDataServiceExecutorFactory() {
@@ -31,6 +32,17 @@ public abstract class AbstractDataServiceExecutorFactory<T extends DataServiceEx
         T executor = create();
         setExecutor(executor);
         return executor;
+    }
+
+    @Override
+    public DataServiceExecutorFactory withName(String name) {
+        this.name = name;
+        return this;
+    }
+
+    @Override
+    public String getName() {
+        return name;
     }
 
     @Override
