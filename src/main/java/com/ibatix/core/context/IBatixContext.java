@@ -1,11 +1,11 @@
-package com.ibatix.core.data;
+package com.ibatix.core.context;
 
 /**
  * 数据库管理上下文
  *
  * @author master
  */
-public interface DataServiceContext {
+public interface IBatixContext {
 
     /**
      * 获取指定名称、类型的对象

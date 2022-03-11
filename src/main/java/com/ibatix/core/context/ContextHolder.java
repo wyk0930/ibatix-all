@@ -1,18 +1,15 @@
 package com.ibatix.core.context;
 
-import com.ibatix.core.data.AbstractDataServiceContext;
-import com.ibatix.core.data.DataServiceContext;
-
 /**
  * 上下文工具类
  *
  * @author master
  */
 public final class ContextHolder {
-    private static final DataServiceContext context;
+    private static final IBatixContext context;
 
     static {
-        context = new AbstractDataServiceContext() {
+        context = new AbstractIBatixContext() {
         };
     }
 
@@ -20,7 +17,7 @@ public final class ContextHolder {
 
     }
 
-    public static DataServiceContext getContext() {
+    public static IBatixContext getContext() {
         return context;
     }
 

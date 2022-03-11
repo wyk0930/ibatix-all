@@ -1,4 +1,4 @@
-package com.ibatix.core.data;
+package com.ibatix.core.context;
 
 import com.ibatix.core.exception.UnknownException;
 
@@ -10,13 +10,13 @@ import java.util.Map;
  *
  * @author master
  */
-public abstract class AbstractDataServiceContext implements DataServiceContext {
+public abstract class AbstractIBatixContext implements IBatixContext {
     private static final Map<String, Object> CTX_HOLDER = new HashMap<>();
 
     /**
      * 构造器
      */
-    protected AbstractDataServiceContext() {
+    protected AbstractIBatixContext() {
 
     }
 
