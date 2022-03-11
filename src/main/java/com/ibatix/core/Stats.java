@@ -9,7 +9,7 @@ import java.util.Map;
  *
  * @author master
  */
-public interface Stats {
+public interface Stats<T1, T2> {
 
     boolean getBoolean();
 
@@ -55,13 +55,13 @@ public interface Stats {
 
     Stats withBytes(byte[] arg);
 
-    List<Object> getList();
+    List<T1> getList();
 
-    Stats withList(List<Object> arg);
+    Stats withList(List<T1> arg);
 
-    Map<?, ?> getMap();
+    Map<T1, T2> getMap();
 
-    Stats withMap(Map<?, ?> arg);
+    Stats withMap(Map<T1, T2> arg);
 
     Object getObject();
 

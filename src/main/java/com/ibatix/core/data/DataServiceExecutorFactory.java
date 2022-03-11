@@ -5,11 +5,13 @@ package com.ibatix.core.data;
  *
  * @author master
  */
-public interface DataServiceFactory<T extends DataService> {
+public interface DataServiceExecutorFactory<T extends DataServiceExecutor> {
 
     T connect();
 
-    DataServiceFactory withConfig(DataServiceConfiguration config);
+    void disconnect();
+
+    DataServiceExecutorFactory withConfig(DataServiceConfiguration config);
 
     DataServiceConfiguration getConfig();
 
