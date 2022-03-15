@@ -21,6 +21,10 @@ public final class ContextHolder {
         return context;
     }
 
+    public static void put(Object value) {
+        context.put(value);
+    }
+
     public static void put(String name, Object value) {
         context.put(name, value);
     }
