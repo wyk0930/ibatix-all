@@ -2,6 +2,7 @@ package com.ibatix.data.neo4j;
 
 import com.ibatix.core.context.ContextHolder;
 import com.ibatix.core.data.AbstractDataServiceExecutor;
+import com.ibatix.core.data.DataServiceExecutorFactory;
 import org.neo4j.graphdb.*;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 
@@ -14,7 +15,7 @@ public class EmbeddedNeo4jDataServiceExecutor extends AbstractDataServiceExecuto
 
     EmbeddedNeo4jDataServiceExecutor(String factoryName) {
         super(factoryName);
-        factory = ContextHolder.get(factoryName, EmbeddedNeo4jDataServiceExecutorFactory.class);
+        factory = ContextHolder.get(getFactoryName(), EmbeddedNeo4jDataServiceExecutorFactory.class);
         EmbeddedNeo4jDataServiceConfiguration config = (EmbeddedNeo4jDataServiceConfiguration) factory.getConfig();
         File file = new File(config.getDataDir());
         if (!file.exists()) {

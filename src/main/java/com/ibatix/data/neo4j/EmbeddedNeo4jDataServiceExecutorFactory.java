@@ -1,5 +1,6 @@
 package com.ibatix.data.neo4j;
 
+import com.ibatix.core.context.ContextHolder;
 import com.ibatix.core.data.AbstractDataServiceExecutorFactory;
 
 public class EmbeddedNeo4jDataServiceExecutorFactory
@@ -7,6 +8,6 @@ public class EmbeddedNeo4jDataServiceExecutorFactory
 
     @Override
     protected EmbeddedNeo4jDataServiceExecutor create() {
-        return new EmbeddedNeo4jDataServiceExecutor(this.getName());
+        return new EmbeddedNeo4jDataServiceExecutor(ContextHolder.createDefaultServiceName(this.getClass()));
     }
 }

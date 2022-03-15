@@ -15,4 +15,9 @@ public class AbstractDataServiceExecutor implements DataServiceExecutor {
                 .get(factoryName, DataServiceExecutorFactory.class)
                 .disconnect();
     }
+
+    @Override
+    public String getFactoryName() {
+        return factoryName;
+    }
 }

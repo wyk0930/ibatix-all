@@ -1,7 +1,6 @@
 package com.ibatix.data.neo4j;
 
 import com.ibatix.core.data.AbstractDataServiceConfiguration;
-import com.ibatix.core.data.AbstractDataServiceExecutor;
 
 public class EmbeddedNeo4jDataServiceConfiguration extends AbstractDataServiceConfiguration {
     private String dataDir;
@@ -10,7 +9,8 @@ public class EmbeddedNeo4jDataServiceConfiguration extends AbstractDataServiceCo
         return dataDir;
     }
 
-    public void setDataDir(String dataDir) {
+    public EmbeddedNeo4jDataServiceConfiguration withDataDir(String dataDir) {
         this.dataDir = dataDir;
+        return this;
     }
 }

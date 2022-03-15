@@ -66,13 +66,6 @@ public abstract class AbstractIBatixContext implements IBatixContext {
      * @return 默认服务名称
      */
     private <T> String createDefaultServiceName(Class<T> type) {
-        char[] arr = type.getSimpleName().toCharArray();
-        if (arr[0] == '_' || arr[0] == '$') {
-            throw new UnknownException();
-        }
-        if (arr[0] >= 65 && arr[0] <= 90) {
-            arr[0] = (char) (arr[0] + 32);
-        }
-        return String.valueOf(arr);
+        return ContextHolder.createDefaultServiceName(type);
     }
 }

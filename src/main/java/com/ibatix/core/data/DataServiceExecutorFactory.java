@@ -11,11 +11,11 @@ public interface DataServiceExecutorFactory<T extends DataServiceExecutor> {
 
     void disconnect();
 
-    DataServiceExecutorFactory withName(String name);
+    void setName(String name);
 
     String getName();
 
-    DataServiceExecutorFactory withConfig(DataServiceConfiguration config);
+    void setConfig(DataServiceConfiguration config);
 
     DataServiceConfiguration getConfig();
 

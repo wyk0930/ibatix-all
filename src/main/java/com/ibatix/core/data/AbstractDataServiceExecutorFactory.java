@@ -14,9 +14,8 @@ public abstract class AbstractDataServiceExecutorFactory<T extends DataServiceEx
     }
 
     @Override
-    public DataServiceExecutorFactory withConfig(DataServiceConfiguration config) {
+    public void setConfig(DataServiceConfiguration config) {
         this.config = config;
-        return this;
     }
 
     @Override
@@ -35,9 +34,8 @@ public abstract class AbstractDataServiceExecutorFactory<T extends DataServiceEx
     }
 
     @Override
-    public DataServiceExecutorFactory withName(String name) {
+    public void setName(String name) {
         this.name = name;
-        return this;
     }
 
     @Override
