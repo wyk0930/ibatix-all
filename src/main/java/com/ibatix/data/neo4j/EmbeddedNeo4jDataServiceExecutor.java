@@ -6,7 +6,7 @@ import org.neo4j.graphdb.*;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 
 import java.io.File;
-import java.util.Map;
+import java.util.*;
 
 public class EmbeddedNeo4jDataServiceExecutor extends AbstractDataServiceExecutor {
     private final GraphDatabaseService graphDb;
@@ -84,5 +84,22 @@ public class EmbeddedNeo4jDataServiceExecutor extends AbstractDataServiceExecuto
             }
             tx.success();
         }
+    }
+
+    public List<Map<String, Object>> findNodeByLabel(String labelName) {
+        List<Map<String, Object>> dataSet = new ArrayList<>();
+        try (Transaction tx = graphDb.beginTx()) {
+            ResourceIterator<Node> nodes = graphDb.findNodes(Label.label(labelName));
+            nodes.forEachRemaining(node -> {
+                Map<String, Object> ele = new HashMap<String, Object>();
+                ele.put("id", node.getId());
+                node.getAllProperties().forEach((key, value) -> {
+                    ele.put(key, value);
+                });
+                dataSet.add(ele);
+            });
+            tx.success();
+        }
+        return dataSet;
     }
 }
