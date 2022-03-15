@@ -8,8 +8,8 @@ import com.ibatix.core.BaseEnum;
  * @author master
  */
 public enum GenericState implements BaseEnum {
-    ACTIVE(1, "活动"),
-    INACTIVE(0, "非活动"),
+    INACTIVE(1, "非活动"),
+    ACTIVE(0, "活动"),
     INVALID(-1, "无效");
 
     GenericState(Integer code, String desc) {
