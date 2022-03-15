@@ -2,7 +2,6 @@ package com.ibatix.data.neo4j;
 
 import com.ibatix.core.context.ContextHolder;
 import com.ibatix.core.data.AbstractDataServiceExecutor;
-import com.ibatix.core.data.DataServiceExecutorFactory;
 import org.neo4j.graphdb.*;
 import org.neo4j.graphdb.factory.GraphDatabaseFactory;
 
